@@ -52,7 +52,7 @@ public class hbgroup7 {
                     name = sc.nextLine();
                     System.out.print("Enter your age");
                     age = sc.nextInt();
-                    System.out.print("Enter your number telephone")
+                    System.out.print("Enter your number telephone");
                     int numTelephone = sc.nextInt();
                     System.out.print("Enter your gmail");
                     input = sc.nextLine();
