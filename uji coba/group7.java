@@ -27,19 +27,19 @@ public class group7 {
         int numberRoom;
 
         // number of room
-        String [] standard = {"200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210"};
-        String [] superior = {"300", "301", "302", "303", "304", "305", "306", "307", "308", "309", "310"};
-        String [] deluxe = {"400", "401", "402", "403", "404", "405", "406", "407", "408", "409", "410"};
-        String [] single = {"211", "212", "213", "214", "215", "216", "217", "218", "219", "220"};
-        String [] twin = {"311", "312", "313", "314", "315", "316", "317", "318", "319", "320"};
-        String [] doubled = {"411", "412", "413", "414", "415", "416", "417", "418", "419", "420"};
-        String [] family = {"500", "501", "502", "503", "504", "505", "506", "507", "508", "509", "510"};
-        String [] junior = {"511", "512", "513", "514", "515"};
-        String [] suite = {"601", "602", "603", "604", "605"};
-        String [] presidential = {"701", "702", "703"};
-        String [] connecting = {"221", "222", "223", "224", "225", "321", "322", "323", "324", "325"};
-        String [] disabled = {"421", "422", "223", "424", "425", "426", "427", "428", "429", "430"};
-        String [] smoking = {"226", "227", "228", "229", "230", "326", "327", "328", "329", "330"};
+        int [] standard = {200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210};
+        int [] superior = {300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310};
+        int [] deluxe = {400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410};
+        int [] single = {211, 212, 213, 214, 215, 216, 217, 218, 219, 220};
+        int [] twin = {311, 312, 313, 314, 315, 316, 317, 318, 319, 320};
+        int [] doubled = {411, 412, 413, 414, 415, 416, 417, 418, 419, 420};
+        int [] family = {500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510};
+        int [] junior = {511, 512, 513, 514, 515};
+        int [] suite = {601, 602, 603, 604, 605};
+        int [] presidential = {701, 702, 703};
+        int [] connecting = {221, 222, 223, 224, 225, 321, 322, 323, 324, 325};
+        int [] disabled = {421, 422, 223, 424, 425, 426, 427, 428, 429, 430};
+        int [] smoking = {226, 227, 228, 229, 230, 326, 327, 328, 329, 330};
 
         while (!loggedIn) {
             System.out.println("================================================");
@@ -208,9 +208,9 @@ public class group7 {
                     System.out.println("12. Type Disabled Room");
                     System.out.println("13. Type Smoking Room");
                     
-                    System.out.println("Choose the room type you wish to book : ");
+                    System.out.print("Choose the room type you wish to book : ");
                     chooseTypeRoom = sc.nextInt();
-                    System.out.println("How long would you like to stay : ");
+                    System.out.print("How long would you like to stay : ");
                     stay = sc.nextInt();
 
                     System.out.println("Number of room types : ");
@@ -228,8 +228,12 @@ public class group7 {
                     System.out.println("12. Type Disabled Room (421 - 430)");
                     System.out.println("13. Type Smoking Room (226 - 230) & (326 - 330)");
 
-                    System.out.println("Select the room number you wish to book ");
+                    System.out.print("Select the room number you wish to book ");
                     numberRoom = sc.nextInt();
+
+                    for (int i = 0; i < standard.length; i++) {
+                        System.out.println("you choose standard type room");
+                    }
                     System.out.println("================================================");
                     break;
 
