@@ -230,6 +230,7 @@ public class group7 {
 
                     System.out.println("Select the room number you wish to book ");
                     numberRoom = sc.nextInt();
+                    System.out.println("================================================");
                     break;
 
                 case 6:
