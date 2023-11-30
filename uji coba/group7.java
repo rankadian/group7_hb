@@ -1,6 +1,27 @@
 import java.util.Scanner;
 public class group7 {
 
+    // static String[] username = new String[10];
+    // static String[] password = new String[10];
+    // static int count = 0;
+
+    // static void register(Scanner sc){
+    //     if (count >= 10) {
+    //         System.out.println("User registration is not available. Please try again later!!!!!");
+    //         return;
+    //     }
+
+    //     System.out.println("Enter username : ");
+    //     String username = sc.next();
+        
+    //     System.out.println("Enter password : ");
+    //     String password = sc.next();
+
+    //     username[count] = user;
+    //     password[count] = pass;
+    //     count++;
+    // }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -9,21 +30,25 @@ public class group7 {
         String[] passwords = {"password1", "password2", "password3"};
         boolean loggedIn = false;
 
+        // login and sign up
+        // boolean isExit = false;
+        // int option = 0;
+
         String next;
         int menuChoice;
         int menuTypeRoom;
 
         // data user/customer
-        String name;
-        int age;
-        String input;
-        int numTelephone;
-        int people;
-        int checkIn;
-
+        String name = "";
+        int age = 0;
+        String gmail = "";
+        String numTelephone = "";
+        int people = 0;
+        String checkIn = "";
+        
         // select type room
-        int chooseTypeRoom;
-        int stay;
+        int chooseTypeRoom = 0;
+        int stay = 0;
         int numberRoom;
 
         // number of room
@@ -40,6 +65,35 @@ public class group7 {
         int [] connecting = {221, 222, 223, 224, 225, 321, 322, 323, 324, 325};
         int [] disabled = {421, 422, 223, 424, 425, 426, 427, 428, 429, 430};
         int [] smoking = {226, 227, 228, 229, 230, 326, 327, 328, 329, 330};
+
+        // additional facilities
+        int addFacilities = 0;
+
+        // while (!isExit) {
+        //     System.out.println("1. Register");
+        //     System.out.println("2. Login");
+        //     System.out.println("3. Exit");
+        //     System.out.print("Input your chooice : ");
+        //     option = sc.nextInt();
+
+        //     switch (option) {
+        //         case 1:
+        //             register(scanner);
+        //             break;
+                
+        //         case 2:
+        //             login(scanner);
+        //             break;
+
+        //         case 3:
+        //             isExit = true;
+        //             break;
+
+        //         default:
+        //             System.out.println("Invalid option!!!!!");
+        //             break;
+        //     }
+        // }
 
         while (!loggedIn) {
             System.out.println("================================================");
@@ -88,32 +142,32 @@ public class group7 {
                     System.out.print("Enter your age                : ");
                     age = sc.nextInt();
                     System.out.print("Enter your number telephone   : ");
-                    numTelephone = sc.nextInt();
+                    numTelephone = sc.next();
                     System.out.print("Enter your gmail              : ");
-                    input = sc.next();
+                    gmail = sc.next();
                     System.out.print("For how many people           : ");
                     people = sc.nextInt();
                     System.out.print("When will you check in        : ");
-                    checkIn = sc.nextInt();
+                    checkIn = sc.next();
                     sc.nextLine();
                     System.out.println("================================================");
                     break;
 
                 case 2:
                     System.out.println("What type of room would you like to know : ");
-                    System.out.println("1. Type Standard Room");// 1
-                    System.out.println("2. Type Superior Room");// 1-2
-                    System.out.println("3. Type Deluxe Room");// 1-2
-                    System.out.println("4. Type Single Room");// 1
-                    System.out.println("5. Type Twin Room");// 1-2
-                    System.out.println("6. Type Double Room");// 1-2
-                    System.out.println("7. Type Family Room");// 1-3
-                    System.out.println("8. Type Junior Suite Room");// 2-4
-                    System.out.println("9. Type Suite Room");// 2-4
-                    System.out.println("10. Type Presidential Suite");// 2-4
-                    System.out.println("11. Type Connecting Room");// 3-6
-                    System.out.println("12. Type Disabled Room");// 1-2
-                    System.out.println("13. Type Smoking Room");// 1-2
+                    System.out.println("1. Type Standard Room");// 1 people
+                    System.out.println("2. Type Superior Room");// 1-2 people
+                    System.out.println("3. Type Deluxe Room");// 1-2 people
+                    System.out.println("4. Type Single Room");// 1 people
+                    System.out.println("5. Type Twin Room");// 1-2 people
+                    System.out.println("6. Type Double Room");// 1-2 people
+                    System.out.println("7. Type Family Room");// 1-3 people
+                    System.out.println("8. Type Junior Suite Room");// 2-4 people
+                    System.out.println("9. Type Suite Room");// 2-4 people
+                    System.out.println("10. Type Presidential Suite");// 2-4 people
+                    System.out.println("11. Type Connecting Room");// 3-6 people
+                    System.out.println("12. Type Disabled Room");// 1-2 people
+                    System.out.println("13. Type Smoking Room");// 1-2 people
 
                     System.out.print("Select the room type you want to know  : ");
                     menuTypeRoom = sc.nextInt();
@@ -189,10 +243,10 @@ public class group7 {
                             System.out.println("The type you selected is not available, please try again!!!!!");
                             System.out.println("================================================");
                             break;
-                    }
-                    break;
+                        }
+                        break;
 
-                    case 3:
+                case 3:
                     System.out.println("Which room type would you like to book ? ");
                     System.out.println("1. Type Standard Room");
                     System.out.println("2. Type Superior Room");
@@ -212,30 +266,731 @@ public class group7 {
                     chooseTypeRoom = sc.nextInt();
                     System.out.print("How long would you like to stay : ");
                     stay = sc.nextInt();
+                    System.out.println("================================================");
 
-                    System.out.println("Number of room types : ");
-                    System.out.println("1. Type Standard Room (200 - 210)");
-                    System.out.println("2. Type Superior Room (300 - 310)");
-                    System.out.println("3. Type Deluxe Room (400 - 410)");
-                    System.out.println("4. Type Single Room (211 - 220)");
-                    System.out.println("5. Type Twin Room (311 - 320)");
-                    System.out.println("6. Type Double Room (411 - 420)");
-                    System.out.println("7. Type Family Room (500 - 510)");
-                    System.out.println("8. Type Junior Suite Room (511 - 515)");
-                    System.out.println("9. Type Suite Room (601 - 605)");
-                    System.out.println("10. Type Presidential Suite (701 - 703)");
-                    System.out.println("11. Type Connecting Room (221-225) & (321 - 325)");
-                    System.out.println("12. Type Disabled Room (421 - 430)");
-                    System.out.println("13. Type Smoking Room (226 - 230) & (326 - 330)");
+                    switch (chooseTypeRoom) {
+                        case 1:
+                            System.out.println("1. Type Standard Room (200 - 210)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 200) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 201) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 202) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 203) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 204) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 205) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 206) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 207) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 208) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 209) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 210) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
 
-                    System.out.print("Select the room number you wish to book ");
-                    numberRoom = sc.nextInt();
+                        case 2:
+                            System.out.println("2. Type Superior Room (300 - 310)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 300) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 301) {
+                             System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 302) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 303) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 304) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 305) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 306) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 307) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 308) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 309) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 310) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
 
-                    for (int i = 0; i < standard.length; i++) {
-                        System.out.println("you choose standard type room");
+                        case 3:
+                            System.out.println("3. Type Deluxe Room (400 - 410)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 400) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 401) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 402) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 403) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 404) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 405) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 406) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 407) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 408) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 409) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 410) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                            case 4:
+                            System.out.println("4. Type Single Room (211 - 220)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 211) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 212) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 213) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 214) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 215) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 216) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 217) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 218) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 219) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 220) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                        case 5:
+                            System.out.println("5. Type Twin Room (311 - 320)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 311) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 312) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 313) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 314) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 315) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 316) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 317) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 318) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 319) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 320) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                        case 6:
+                            System.out.println("6. Type Double Room (411 - 420)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 411) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 412) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 413) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 414) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 415) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 416) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 417) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 418) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 419) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 420) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                        case 7:
+                            System.out.println("7. Type Family Room (500 - 510)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 500) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 501) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 502) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 503) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 504) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 505) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 506) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 507) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 508) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 509) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 510) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                        case 8:
+                            System.out.println("8. Type Junior Suite Room (511 - 515)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 511) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 512) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 513) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 514) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 515) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                        case 9:
+                            System.out.println("9. Type Suite Room (601 - 605)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 601) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 602) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 603) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 604) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 605) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                        case 10:
+                            System.out.println("10. Type Presidential Suite (701 - 703)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 701) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 702) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 703) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                        case 11:
+                            System.out.println("11. Type Connecting Room (221-225) & (321 - 325)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 221) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 222) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 223) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 224) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 225) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 321) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 322) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 323) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 324) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 325) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                        case 12:
+                            System.out.println("12. Type Disabled Room (421 - 430)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 421) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 422) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 423) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 424) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 425) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 426) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 427) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 428) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 429) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 430) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                                System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                        case 13:
+                            System.out.println("13. Type Smoking Room (226 - 230) & (326 - 330)");
+                            System.out.print("Select the room number you wish to book : ");
+                            numberRoom = sc.nextInt();
+                            System.out.println("================================================");
+                            if (numberRoom == 226) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 227) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 228) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 229) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 230) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 326) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 327) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 328) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 329) {
+                                System.out.println("The room number you selected is available");
+                            } else if (numberRoom == 330) {
+                                System.out.println("The room number you selected is available");
+                            } else {
+                            System.out.println("The room number you selected is invalid");
+                            }
+                            break;
+
+                        default:
+                            System.out.println("The room type you selected is invalid!!!!!");
+                            System.out.println("================================================");
+                            break;
                     }
+                    // System.out.println("Number of room types : ");
+                    // System.out.println("1. Type Standard Room (200 - 210)");
+                    // System.out.println("2. Type Superior Room (300 - 310)");
+                    // System.out.println("3. Type Deluxe Room (400 - 410)");
+                    // System.out.println("4. Type Single Room (211 - 220)");
+                    // System.out.println("5. Type Twin Room (311 - 320)");
+                    // System.out.println("6. Type Double Room (411 - 420)");
+                    // System.out.println("7. Type Family Room (500 - 510)");
+                    // System.out.println("8. Type Junior Suite Room (511 - 515)");
+                    // System.out.println("9. Type Suite Room (601 - 605)");
+                    // System.out.println("10. Type Presidential Suite (701 - 703)");
+                    // System.out.println("11. Type Connecting Room (221-225) & (321 - 325)");
+                    // System.out.println("12. Type Disabled Room (421 - 430)");
+                    // System.out.println("13. Type Smoking Room (226 - 230) & (326 - 330)");
+
+                    // System.out.print("Select the room number you wish to book : ");
+                    // numberRoom = sc.nextInt();
+                    // if (chooseTypeRoom == 1) {
+                    //     if (numberRoom == 200) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 201) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 202) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 203) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 204) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 205) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 206) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 207) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 208) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 209) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 210) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 2) {
+                    //     if (numberRoom == 300) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 301) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 302) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 303) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 304) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 305) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 306) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 307) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 308) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 309) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 310) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 3) {
+                    //     if (numberRoom == 400) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 401) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 402) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 403) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 404) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 405) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 406) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 407) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 408) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 409) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 410) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 4) {
+                    //     if (numberRoom == 211) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 212) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 213) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 214) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 215) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 216) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 217) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 218) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 219) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 220) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 5) {
+                    //     if (numberRoom == 311) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 312) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 313) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 314) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 315) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 316) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 317) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 318) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 319) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 320) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 6) {
+                    //     if (numberRoom == 411) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 412) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 413) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 414) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 415) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 416) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 417) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 418) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 419) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 420) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 7) {
+                    //     if (numberRoom == 500) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 501) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 502) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 503) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 504) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 505) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 506) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 507) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 508) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 509) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 510) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 8) {
+                    //     if (numberRoom == 511) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 512) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 513) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 514) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 515) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 9) {
+                    //     if (numberRoom == 601) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 602) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 603) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 604) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 605) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 10) {
+                    //     if (numberRoom == 701) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 702) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 703) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 11) {
+                    //     if (numberRoom == 221) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 222) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 223) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 224) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 225) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 321) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 322) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 323) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 324) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 325) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else if (chooseTypeRoom == 12) {
+                    //     if (numberRoom == 421) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 422) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 423) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 424) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 425) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 426) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 427) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 428) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 429) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 430) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                        
+                    // } else if (chooseTypeRoom == 13) {
+                    //     if (numberRoom == 226) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 227) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 228) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 229) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 230) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 326) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 327) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 328) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 329) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else if (numberRoom == 330) {
+                    //         System.out.println("The room number you selected is available");
+                    //     } else {
+                    //         System.out.println("The room number you selected is invalid");
+                    //     }
+                    // } else {
+                    //     System.out.println("The room type you selected is invalid!!!!!");
+                    // }
                     System.out.println("================================================");
                     break;
+
+                case 4:
+                    System.out.println("---Add additional facilities---");
+                    System.out.println("1. Extra mattress");
+                    System.out.println("2. Extra pillow");
+                    System.out.println("3. Special event");
+                    System.out.println("4. Baby cot");
+                    System.out.println("5. Food or Beverage Packages");
+                    System.out.println("6. None add facilities");
+
+                    System.out.print("Select the additional facilities you wish to book  ");
+                    addFacilities = sc.nextInt();
+
+                    switch (addFacilities) {
+                        case 1:
+                            System.out.println("Add extra mattress");
+                            break;
+
+                         case 2:
+                            System.out.println("Add extra pillow");
+                            break;
+
+                        case 3:
+                            System.out.println("Add special event");
+                            break;
+
+                        case 4:
+                            System.out.println("Add baby cot");
+                            break;
+                            
+                        case 5:
+                            System.out.println("Add food or beverage packages");
+                            break;
+
+                        case 6:
+                            System.out.println("None add additional facilities");
+                            break;
+
+                        default:
+                        System.out.println("Your chooice invalid!!!!!");
+                            break;
+                    }
+                    System.out.println("================================================");
+
 
                 case 6:
                     System.out.println("================================================");
@@ -244,12 +999,15 @@ public class group7 {
                     System.out.println("                 HAVE A NICE DAY                ");
                     System.out.println("================================================");
                     System.out.println("       ||Your reservation booking invoice||        ");
-                    System.out.println("Name : " );
-                    System.out.println("Age : ");
-                    System.out.println("Telephone : ");
-                    System.out.println("Gmail : ");
-                    System.out.println("For : " + "people");
-                    System.out.println("Check-In : ");
+                    System.out.println("Name                    : " + name);
+                    System.out.println("Age                     : " + age);
+                    System.out.println("Telephone               : " + numTelephone);
+                    System.out.println("Gmail                   : " + gmail);
+                    System.out.println("For                     : " + people + " people");
+                    System.out.println("Check-In                : " + checkIn);
+                    System.out.println("Room type you choose    : " + chooseTypeRoom);
+                    System.out.println("Lenght of your stay     : " + stay);
+                    System.out.println("================================================");
 
                     System.exit(0);
                 break;
@@ -257,7 +1015,7 @@ public class group7 {
                     System.out.println("Invalid data menu choice!!!!!");
                     System.out.println("================================================");
                     break;
-            }
+            }   
             System.out.print("Would you like to return to the main menu to continue the reservation process? (y/n) : ");
             next = sc.next();
             System.out.println("================================================");
