@@ -105,7 +105,6 @@ public class sekian_terimakasih {
         // riview
         String[] fasilities = { "Type Room", "Extra Mattress", "Extra Pillow", "Special Event", "Baby Cot",
                 "Food or Beverage Packages" };
-        String[] review = { "Normal", "Good Service", "Amazing!", "The Hotel is Good", "Complete Facilities" };
 
         // tax payment methods
         int taxBRI = 25000;
@@ -876,10 +875,6 @@ public class sekian_terimakasih {
                     for (String fasility : fasilities) {
                         System.out.println("- " + fasility);
                     }
-                    System.out.println("Customer Review: ");
-                    for (String reviewItem : review) {
-                        System.out.println(reviewItem);
-                    }
                     System.out.println("===================================================");
                     // hotel rating options for customers
                     System.out.println("Hotel rating options.");
@@ -888,7 +883,7 @@ public class sekian_terimakasih {
                     System.out.println("3 (not bad)");
                     System.out.println("4 (good)");
                     System.out.println("5 (very good)");
-                    System.out.print("Enter hotel rating: ");
+                    System.out.print("Enter rating of hotel you choose: ");
                     // int hotelRating = hotel.nextInt();
                     sc.nextLine();
 
